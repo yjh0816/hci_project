@@ -15,7 +15,7 @@ import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity() {
+class CookActivity : AppCompatActivity() {
     var data:ArrayList<MyData> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter
@@ -63,14 +63,14 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this,
-                LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager.VERTICAL, false)
         adapter = MyAdapter(data)
         adapter.itemClickListener = object : MyAdapter.OnItemClickListener{
             override fun OnItemClick(
-                    holder: MyAdapter.ViewHolder,
-                    view: View,
-                    data: MyData,
-                    position: Int
+                holder: MyAdapter.ViewHolder,
+                view: View,
+                data: MyData,
+                position: Int
             ) {
                 if(isTtsReady)
                     tts.speak(data.word, TextToSpeech.QUEUE_ADD, null, null)
@@ -81,11 +81,11 @@ class MainActivity : AppCompatActivity() {
         }
         recyclerView.adapter = adapter
         val simpleCallBack = object:ItemTouchHelper.SimpleCallback(ItemTouchHelper.DOWN or ItemTouchHelper.UP,
-                ItemTouchHelper.RIGHT){
+            ItemTouchHelper.RIGHT){
             override fun onMove(
-                    recyclerView: RecyclerView,
-                    viewHolder: RecyclerView.ViewHolder,
-                    target: RecyclerView.ViewHolder
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
             ): Boolean {
                 adapter.moveItem(viewHolder.adapterPosition, target.adapterPosition)
                 return true
