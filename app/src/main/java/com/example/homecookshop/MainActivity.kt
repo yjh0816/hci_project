@@ -1,11 +1,14 @@
 package com.example.homecookshop
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recipe.setOnClickListener {
+            material_modal()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -41,6 +45,27 @@ class MainActivity : AppCompatActivity() {
         initData()
         initRecyclerView()
         initTTS()
+    }
+
+    private fun material_modal(){
+        var builder  = AlertDialog.Builder(this)
+        builder.setTitle("재료 추가")
+        builder.setView(R.mipmap.ic_launcher)
+
+        var v1 = layoutInflater.inflate(R.layout.material_modal,null)
+        builder.setView(v1)
+
+        var listener = DialogInterface.OnClickListener { dialog, which ->
+            var alert = dialog as AlertDialog
+            var edit_material: EditText?= alert.findViewById(R.id.edit_material)
+            var edit_count: EditText?= alert.findViewById(R.id.edit_count)
+            var edit_unit: EditText?= alert.findViewById(R.id.edit_unit)
+
+            /*tv1.text = "${edit1?.text}"
+            tv1.append("${edit2?.text}")*/
+        }
+
+        builder.show()
     }
 
     private fun initTTS() {
