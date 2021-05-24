@@ -23,7 +23,7 @@ import kotlin.collections.ArrayList
 class AddVocActivity : AppCompatActivity() {
     var data:ArrayList<MyData> = ArrayList()
     lateinit var recyclerView: RecyclerView
-    lateinit var adapter: MyAdapter
+    lateinit var adapter: MyAdapter2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_voc)
@@ -89,10 +89,10 @@ class AddVocActivity : AppCompatActivity() {
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL, false)
-        adapter = MyAdapter(data)
-        adapter.itemClickListener = object : MyAdapter.OnItemClickListener{
+        adapter = MyAdapter2(data)
+        adapter.itemClickListener = object : MyAdapter2.OnItemClickListener{
             override fun OnItemClick(
-                holder: MyAdapter.ViewHolder,
+                holder: MyAdapter2.ViewHolder,
                 view: View,
                 data: MyData,
                 position: Int
@@ -148,6 +148,7 @@ class AddVocActivity : AppCompatActivity() {
         val output = PrintStream(openFileOutput("out.txt", Context.MODE_APPEND))
         output.println(word)
         output.println(meaning)
+        output.println(food)
         output.close()
         val intent = Intent()
         intent.putExtra("voc", MyData(word,meaning,false,food))
