@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.row.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -99,11 +98,12 @@ class ShopActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(simpleCallBack)
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
-    fun readFileScan(scan:Scanner){
+    fun readFileScan(scan: Scanner){
         while(scan.hasNextLine()){
             val word = scan.nextLine()
             val meaning = scan.nextLine()
-            data.add(MyData(word, meaning, false))
+            val food = scan.nextLine()
+            data.add(MyData(word, meaning, false, food))
         }
         scan.close()
     }

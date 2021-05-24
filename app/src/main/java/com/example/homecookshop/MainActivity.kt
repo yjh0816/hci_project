@@ -1,19 +1,15 @@
 package com.example.homecookshop
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.row.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -106,11 +102,12 @@ class MainActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(simpleCallBack)
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
-    fun readFileScan(scan:Scanner){
+    fun readFileScan(scan: Scanner){
         while(scan.hasNextLine()){
             val word = scan.nextLine()
             val meaning = scan.nextLine()
-            data.add(MyData(word, meaning, false))
+            val food = scan.nextLine()
+            data.add(MyData(word, meaning, false, food))
         }
         scan.close()
     }
@@ -120,7 +117,7 @@ class MainActivity : AppCompatActivity() {
             val scan2 = Scanner(openFileInput("out.txt"))
             readFileScan(scan2)
         }catch (e:Exception){
-            Toast.makeText(this, "추가된 단어가 없음", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "추가된 단어가 없음", Toast.LENGTH_SHORT).show()
         }
 
         val scan = Scanner(resources.openRawResource(R.raw.words))
