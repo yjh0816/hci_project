@@ -27,9 +27,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        addRecipe.setOnClickListener {
+            val intent = Intent(this, AddVocActivity::class.java)
+            startActivity(intent)
+        }
         recipe.setOnClickListener {
-            material_modal()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -47,26 +49,6 @@ class MainActivity : AppCompatActivity() {
         initTTS()
     }
 
-    private fun material_modal(){
-        var builder  = AlertDialog.Builder(this)
-        builder.setTitle("재료 추가")
-        builder.setView(R.mipmap.ic_launcher)
-
-        var v1 = layoutInflater.inflate(R.layout.material_modal,null)
-        builder.setView(v1)
-
-        var listener = DialogInterface.OnClickListener { dialog, which ->
-            var alert = dialog as AlertDialog
-            var edit_material: EditText?= alert.findViewById(R.id.edit_material)
-            var edit_count: EditText?= alert.findViewById(R.id.edit_count)
-            var edit_unit: EditText?= alert.findViewById(R.id.edit_unit)
-
-            /*tv1.text = "${edit1?.text}"
-            tv1.append("${edit2?.text}")*/
-        }
-
-        builder.show()
-    }
 
     private fun initTTS() {
         tts = TextToSpeech(this, TextToSpeech.OnInitListener {
