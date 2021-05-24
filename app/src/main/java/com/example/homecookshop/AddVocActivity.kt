@@ -6,6 +6,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -22,7 +23,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class AddVocActivity : AppCompatActivity() {
-    var data:ArrayList<MyData> = ArrayList()
+    var data:ArrayList<MyData2> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter2
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,11 +99,11 @@ class AddVocActivity : AppCompatActivity() {
             override fun OnItemClick(
                 holder: MyAdapter2.ViewHolder,
                 view: View,
-                data: MyData,
+                data: MyData2,
                 position: Int
             ) {
                 //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
-                adapter.showMeaning(holder,data,position)
+                //adapter.showMeaning(holder,data,position)
             }
 
         }
@@ -132,7 +133,15 @@ class AddVocActivity : AppCompatActivity() {
             val word = scan.nextLine()
             val meaning = scan.nextLine()
             val food = scan.nextLine()
-            data.add(MyData(word, meaning, false, food))
+
+            val arr = food.split('/')
+
+            for(i in arr.indices){
+                Log.v("as",arr[i])
+                var arr2 = arr[i].split(' ')
+                data.add(MyData2(arr2[0], arr2[1], arr2[2]))
+            }
+
         }
         scan.close()
     }
