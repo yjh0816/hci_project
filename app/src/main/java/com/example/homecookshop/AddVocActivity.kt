@@ -37,7 +37,7 @@ class AddVocActivity : AppCompatActivity() {
             //Log.v("isOpen",isOpen.toString())
         }
         addFood.setOnClickListener {
-            material_modal()
+            //material_modal()
         }
         recipe_add.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -73,7 +73,7 @@ class AddVocActivity : AppCompatActivity() {
 //            finish()
 //        }
     }
-    private fun material_modal(){
+    private fun material_modal(str_food: String, position: Int){
         var builder  = AlertDialog.Builder(this)
         builder.setTitle("재료 추가")
         builder.setView(R.mipmap.ic_launcher)
@@ -86,8 +86,26 @@ class AddVocActivity : AppCompatActivity() {
         val cancle_button = v1.findViewById<Button>(R.id.material_cancle)
         val delete_button = v1.findViewById<Button>(R.id.material_delete)
 
+        val edit_material = v1.findViewById<EditText>(R.id.edit_material)
+        val edit_unit = v1.findViewById<EditText>(R.id.edit_unit)
+        val edit_count = v1.findViewById<EditText>(R.id.edit_count)
+
+        val arr = str_food.split('/')
+        lateinit var food_arr:List<String>
+
+        for(i in arr.indices){
+            Log.v("as",arr[i])
+            food_arr = arr[i].split(' ')
+        }
+
+        edit_material.setText(food_arr[0])
+
         confirm_Button.setOnClickListener {
-            //해당 재료 추가
+            val material = edit_material.text.toString()
+            val unit = edit_unit.text.toString()
+            val count  = edit_count.text.toString()
+            val input_text = material+unit+count
+            //writeFile(input_text)
         }
         cancle_button.setOnClickListener {
             material_Dialog.dismiss()
@@ -110,8 +128,9 @@ class AddVocActivity : AppCompatActivity() {
                 position: Int
             ) {
                 //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
-                adapter.showMeaning(holder,data,position)
-
+                //adapter.showMeaning(holder,data,position)
+                Log.v("as",data.food)
+                //material_modal(data.food, position)
             }
 
         }
