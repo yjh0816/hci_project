@@ -1,9 +1,12 @@
 package com.example.homecookshop
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
@@ -60,6 +63,12 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
             holder.textView2.visibility = View.VISIBLE
         else
             holder.textView2.visibility = View.GONE
+        holder.textView.setOnClickListener {
+        val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
+        val isOpen = false
+        intent.putExtra("isOpen",isOpen)
+        ContextCompat.startActivity(holder.textView.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -25,17 +25,17 @@ class MyAdapter2(val items:ArrayList<MyData2>) : RecyclerView.Adapter<MyAdapter2
         notifyItemRemoved(pos)
     }
 
-//    fun showMeaning(itemView: ViewHolder, data: MyData, pos:Int){
-//        if(itemView.textView2.visibility == View.GONE){
-//            data.isOpen = true
-//            itemView.textView2.visibility = View.VISIBLE
-//
-//        }else if(itemView.textView2.visibility == View.VISIBLE){
-//            data.isOpen = false
-//            itemView.textView2.visibility = View.GONE
-//
-//        }
-//    }
+    fun showMeaning(itemView: ViewHolder, data: MyData2, pos:Int){
+        if(itemView.textView2.visibility == View.GONE){
+            data.isOpen = true
+            itemView.textView2.visibility = View.VISIBLE
+
+        }else if(itemView.textView2.visibility == View.VISIBLE){
+            data.isOpen = false
+            itemView.textView2.visibility = View.GONE
+
+        }
+    }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textView:TextView = itemView.findViewById(R.id.textView)
@@ -54,12 +54,12 @@ class MyAdapter2(val items:ArrayList<MyData2>) : RecyclerView.Adapter<MyAdapter2
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position].word
-        holder.textView2.text = items[position].meaning
+        holder.textView2.text = items[position].meaning+" "+items[position].food
 
-//        if(items[position].isOpen)
-//            holder.textView2.visibility = View.VISIBLE
-//        else
-//            holder.textView2.visibility = View.GONE
+        if(items[position].isOpen)
+            holder.textView2.visibility = View.VISIBLE
+        else
+            holder.textView2.visibility = View.GONE
     }
 
     override fun getItemCount(): Int {

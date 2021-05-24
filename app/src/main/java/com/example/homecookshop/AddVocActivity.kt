@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_add_voc.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.row.*
 import java.io.PrintStream
 import java.lang.Exception
 import java.util.*
@@ -29,6 +30,12 @@ class AddVocActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_voc)
+        if(intent.hasExtra("isOpen")){
+            //val isOpen = intent.getStringExtra("isOpen")
+            val isOpen = intent.getBooleanExtra("isOpen",false)
+
+            //Log.v("isOpen",isOpen.toString())
+        }
         addFood.setOnClickListener {
             material_modal()
         }
@@ -103,7 +110,8 @@ class AddVocActivity : AppCompatActivity() {
                 position: Int
             ) {
                 //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
-                //adapter.showMeaning(holder,data,position)
+                adapter.showMeaning(holder,data,position)
+
             }
 
         }
@@ -137,9 +145,9 @@ class AddVocActivity : AppCompatActivity() {
             val arr = food.split('/')
 
             for(i in arr.indices){
-                Log.v("as",arr[i])
+                //Log.v("as",arr[i])
                 var arr2 = arr[i].split(' ')
-                data.add(MyData2(arr2[0], arr2[1], arr2[2]))
+                data.add(MyData2(arr2[0], arr2[1], arr2[2],false))
             }
 
         }
@@ -164,7 +172,7 @@ class AddVocActivity : AppCompatActivity() {
         output.println(food)
         output.close()
         val intent = Intent()
-        intent.putExtra("voc", MyData(word,meaning,false,food))
+        //intent.putExtra("voc", MyData(word,meaning,food,false))
         setResult(Activity.RESULT_OK, intent)
         finish()
     }
