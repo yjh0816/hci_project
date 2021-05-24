@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -71,18 +72,21 @@ class AddVocActivity : AppCompatActivity() {
 
         var v1 = layoutInflater.inflate(R.layout.material_modal,null)
         builder.setView(v1)
+        val material_Dialog = builder.show()
 
-        var listener = DialogInterface.OnClickListener { dialog, which ->
-            var alert = dialog as AlertDialog
-            var edit_material: EditText?= alert.findViewById(R.id.edit_material)
-            var edit_count: EditText?= alert.findViewById(R.id.edit_count)
-            var edit_unit: EditText?= alert.findViewById(R.id.edit_unit)
+        val confirm_Button = v1.findViewById<Button>(R.id.material_confirm)
+        val cancle_button = v1.findViewById<Button>(R.id.material_cancle)
+        val delete_button = v1.findViewById<Button>(R.id.material_delete)
 
-            /*tv1.text = "${edit1?.text}"
-            tv1.append("${edit2?.text}")*/
+        confirm_Button.setOnClickListener {
+            //해당 재료 추가
         }
-
-        builder.show()
+        cancle_button.setOnClickListener {
+            material_Dialog.dismiss()
+        }
+        delete_button.setOnClickListener {
+            //해당 재료 삭제
+        }
     }
 
     private fun initRecyclerView() {
