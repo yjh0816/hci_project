@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddNewRecipe"/>
         <activity android:name=".ShopActivity4"></activity>
         <activity android:name=".ShopActivity3" />
         <activity android:name=".ShopActivity2" />
@@ -34,6 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".material_add"/>
+        <activity android:name=".material_confirm"/>
+        <activity android:name=".material_delete"/>
     </application>
 
 </manifest>
