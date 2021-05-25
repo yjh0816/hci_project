@@ -53,7 +53,7 @@ class MyAdapter2(val items:ArrayList<MyData2>) : RecyclerView.Adapter<MyAdapter2
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = items[position].word
+        holder.textView.text = items[position].word+" "+items[position].meaning+" "+items[position].food
         holder.textView2.text = items[position].meaning+" "+items[position].food
 
         if(items[position].isOpen)

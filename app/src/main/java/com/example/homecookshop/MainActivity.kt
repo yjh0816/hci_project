@@ -47,20 +47,20 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initTTS() {
-        tts = TextToSpeech(this, TextToSpeech.OnInitListener {
+      //  tts = TextToSpeech(this, TextToSpeech.OnInitListener {
             isTtsReady = true
-            tts.language = Locale.US
-        })
+          //  tts.language = Locale.US
+       // })
     }
 
     override fun onStop() {
         super.onStop()
-        tts.stop()
+      //  tts.stop()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        tts.shutdown()
+       // tts.shutdown()
     }
 
     private fun initRecyclerView() {
@@ -78,7 +78,8 @@ class MainActivity : AppCompatActivity() {
                 if(isTtsReady)
                     tts.speak(data.word, TextToSpeech.QUEUE_ADD, null, null)
                 //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
-                adapter.showMeaning(holder,data,position)
+//                adapter.showMeaning(holder,data,position)
+                adapter.shopping(holder,data,position)
             }
 
         }

@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -18,8 +19,10 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_add_voc.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.row.*
+import java.io.BufferedReader
 import java.io.PrintStream
 import java.lang.Exception
+import java.nio.Buffer
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -27,10 +30,12 @@ class AddVocActivity : AppCompatActivity() {
     var data:ArrayList<MyData2> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter2
-    var pos: Int = 0
+    var pos: Int = -1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_voc)
+
         if(intent.hasExtra("isOpen")){
             //val isOpen = intent.getStringExtra("isOpen")
             val isOpen = intent.getBooleanExtra("isOpen",false)
@@ -80,7 +85,7 @@ class AddVocActivity : AppCompatActivity() {
 //            finish()
 //        }
     }
-    private fun material_modal(str_word:String, str_meaning:String, str_food: String){
+    private fun material_modal(str_name:String, str_word:String, str_meaning:String, str_food: String, position:Int){
         var builder  = AlertDialog.Builder(this)
         builder.setTitle("재료 추가")
         builder.setView(R.mipmap.ic_launcher)
@@ -97,6 +102,7 @@ class AddVocActivity : AppCompatActivity() {
         val edit_unit = v1.findViewById<EditText>(R.id.edit_unit)
         val edit_count = v1.findViewById<EditText>(R.id.edit_count)
 
+
         edit_material.setText(str_word)
         edit_count.setText(str_meaning)
         edit_unit.setText(str_food)
@@ -107,11 +113,17 @@ class AddVocActivity : AppCompatActivity() {
             val count  = edit_count.text.toString()
             val input_text = material+unit+count
             //writeFile(input_text)
+
+            writeFile(str_name, material,unit,count,position)
+            material_Dialog.dismiss()
+
         }
         cancle_button.setOnClickListener {
             material_Dialog.dismiss()
         }
         delete_button.setOnClickListener {
+            Log.v("as", position.toString())
+            material_Dialog.dismiss()
             //해당 재료 삭제
         }
     }
@@ -129,7 +141,7 @@ class AddVocActivity : AppCompatActivity() {
                 position: Int
             ) {
                 //adapter.showMeaning(holder,data,position)
-                material_modal(data.word, data.meaning, data.food)
+                material_modal(data.menu_name, data.word, data.meaning, data.food, position)
             }
 
         }
@@ -169,7 +181,7 @@ class AddVocActivity : AppCompatActivity() {
                     break;
                 }
                 var arr2 = arr[i].split(' ')
-                data.add(MyData2(arr2[0], arr2[1], arr2[2],false))
+                data.add(MyData2(word, arr2[0], arr2[1], arr2[2],false))
             }
             count = count + 1
         }
@@ -187,15 +199,34 @@ class AddVocActivity : AppCompatActivity() {
         val scan = Scanner(resources.openRawResource(R.raw.words))
         readFileScan(scan)
     }
-    private fun writeFile(input_text: String, meaning: String, food: String) {
-        val output = PrintStream(openFileOutput("words.txt", Context.MODE_APPEND))
-        //output.println(word)
-        output.println(meaning)
-        output.println(food)
-        output.close()
-        val intent = Intent()
-        //intent.putExtra("voc", MyData(word,meaning,food,false))
-        setResult(Activity.RESULT_OK, intent)
-        finish()
+    private fun writeFile(menuname:String, material:String, unit:String, count:String, position: Int) {
+        var count = 0
+        val scan = Scanner(resources.openRawResource(R.raw.words))
+        while(scan.hasNextLine()){
+            val word = scan.nextLine()
+            val meaning = scan.nextLine()
+            val food = scan.nextLine()
+            val input =  material + " " + unit + " " + count + "/"
+            val arr = food.split('/')
+
+            if(menuname == word){
+                for(i in arr.indices){
+                    //기존의 정보와 같다면 -> 현재 arr[i]를 input으로 변경
+                }
+            }
+            else{
+                continue
+            }
+            /*for(i in arr.indices){
+                if(pos != count){
+                    break;
+                }
+                var arr2 = arr[i].split(' ')
+                data.add(MyData2(word, arr2[0], arr2[1], arr2[2],false))
+            }
+            count = count + 1*/
+        }
+        scan.close()
     }
+
 }
