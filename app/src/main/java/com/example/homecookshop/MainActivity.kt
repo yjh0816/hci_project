@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.row.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -28,15 +26,15 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
-        recipe.setOnClickListener {
+        recipe_add.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        shop.setOnClickListener {
+        shop_add.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
-        cook.setOnClickListener {
+        cook_add.setOnClickListener {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
