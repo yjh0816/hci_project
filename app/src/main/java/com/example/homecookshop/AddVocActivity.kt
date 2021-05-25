@@ -106,7 +106,7 @@ class AddVocActivity : AppCompatActivity() {
             val unit = edit_unit.text.toString()
             val count  = edit_count.text.toString()
             val input_text = material+unit+count
-            writeFile(input_text)
+            //writeFile(input_text)
         }
         cancle_button.setOnClickListener {
             material_Dialog.dismiss()
