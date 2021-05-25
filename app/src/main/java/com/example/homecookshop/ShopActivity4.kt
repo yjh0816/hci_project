@@ -19,16 +19,17 @@ import kotlinx.android.synthetic.main.activity_main.recipe
 import kotlinx.android.synthetic.main.activity_main.shop
 import kotlinx.android.synthetic.main.activity_shop.*
 import kotlinx.android.synthetic.main.activity_shop2.*
+import kotlinx.android.synthetic.main.activity_shop3.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ShopActivity2 : AppCompatActivity() {
+class ShopActivity4 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shop2)
-        second.setOnClickListener {
-            material_modal("된장찌개","물","200","ml",0)
+        setContentView(R.layout.activity_shop4)
+        third.setOnClickListener {
+            material_modal("된장찌개","호박","1","개",0)
         }
         recipe.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -73,7 +74,7 @@ class ShopActivity2 : AppCompatActivity() {
             //writeFile(input_text)
 
             material_Dialog.dismiss()
-            val intent = Intent(this, ShopActivity3::class.java)
+            val intent = Intent(this, ShopActivity2::class.java)
             startActivity(intent)
         }
         cancle_button.setOnClickListener {
