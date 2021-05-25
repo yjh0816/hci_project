@@ -16,7 +16,7 @@ class AddNewRecipe : AppCompatActivity() {
     var isTtsReady = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_add_new_recipe)
         addRecipe.setOnClickListener {
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
