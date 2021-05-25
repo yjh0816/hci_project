@@ -44,7 +44,7 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textView:TextView = itemView.findViewById(R.id.textView)
-        //val textView2:TextView = itemView.findViewById(R.id.textView2)
+        val textView2:TextView = itemView.findViewById(R.id.textView2)
         init{
             itemView.setOnClickListener {
                 itemClickListener?.OnItemClick(this, it, items[adapterPosition], adapterPosition)
