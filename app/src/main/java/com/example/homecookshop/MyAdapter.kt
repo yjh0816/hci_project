@@ -34,15 +34,17 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         if(itemView.textView.paintFlags == Paint.STRIKE_THRU_TEXT_FLAG){
             data.isOpen = true
             itemView.textView.paintFlags = 0
+            Toast.makeText(itemView.textView.context,data.word+"\n장바구니 해제",Toast.LENGTH_SHORT).show()
         }else if(itemView.textView.paintFlags == 0){
             data.isOpen = false
             itemView.textView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            Toast.makeText(itemView.textView.context,data.word+"\n장바구니 추가",Toast.LENGTH_SHORT).show()
         }
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textView:TextView = itemView.findViewById(R.id.textView)
-        val textView2:TextView = itemView.findViewById(R.id.textView2)
+        //val textView2:TextView = itemView.findViewById(R.id.textView2)
         init{
             itemView.setOnClickListener {
                 itemClickListener?.OnItemClick(this, it, items[adapterPosition], adapterPosition)
