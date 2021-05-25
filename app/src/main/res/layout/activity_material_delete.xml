@@ -114,7 +114,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/recipe"
+            android:id="@+id/recipe_add5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -122,7 +122,7 @@
             android:background="@color/colorYellow"/>
 
         <Button
-            android:id="@+id/shop"
+            android:id="@+id/shop_add5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -130,7 +130,7 @@
             />
 
         <Button
-            android:id="@+id/cook"
+            android:id="@+id/cook_add5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

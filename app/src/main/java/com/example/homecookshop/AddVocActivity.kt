@@ -1,8 +1,5 @@
 package com.example.homecookshop
 
-import android.app.Activity
-import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +7,6 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,10 +16,7 @@ import kotlinx.android.synthetic.main.activity_add_voc.*
 import kotlinx.android.synthetic.main.activity_add_voc.addFood
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.row.*
-import java.io.BufferedReader
-import java.io.PrintStream
 import java.lang.Exception
-import java.nio.Buffer
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -54,15 +46,15 @@ class AddVocActivity : AppCompatActivity() {
             val intent = Intent(this, material_add::class.java)
             startActivity(intent)
         }
-        recipe_add.setOnClickListener {
+        recipe_add2.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        shop_add.setOnClickListener {
+        shop_add2.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
-        cook_add.setOnClickListener {
+        cook_add2.setOnClickListener {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }

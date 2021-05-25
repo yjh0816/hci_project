@@ -27,15 +27,15 @@ class AddNewRecipe : AppCompatActivity() {
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
-        recipe_add2.setOnClickListener {
+        recipe_add11.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        shop_add2.setOnClickListener {
+        shop_add11.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
-        cook_add2.setOnClickListener {
+        cook_add11.setOnClickListener {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }

@@ -3,24 +3,10 @@ package com.example.homecookshop
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
-import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.cook
-import kotlinx.android.synthetic.main.activity_main.recipe
-import kotlinx.android.synthetic.main.activity_main.shop
 import kotlinx.android.synthetic.main.activity_shop.*
-import java.lang.Exception
-import java.util.*
-import kotlin.collections.ArrayList
 
 class ShopActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,15 +15,15 @@ class ShopActivity : AppCompatActivity() {
         first.setOnClickListener {
             material_modal("된장찌개","된장","100","g",0)
         }
-        recipe.setOnClickListener {
+        recipe_add7.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        shop.setOnClickListener {
+        shop_add7.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
-        cook.setOnClickListener {
+        cook_add7.setOnClickListener {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
