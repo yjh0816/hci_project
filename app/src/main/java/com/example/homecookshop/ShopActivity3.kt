@@ -46,16 +46,15 @@ class ShopActivity3 : AppCompatActivity() {
     }
     private fun material_modal(str_name:String, str_word:String, str_meaning:String, str_food: String, position:Int){
         var builder  = AlertDialog.Builder(this)
-        builder.setTitle("재료 추가")
+        //builder.setTitle("재료 추가")
         builder.setView(R.mipmap.ic_launcher)
 
-        var v1 = layoutInflater.inflate(R.layout.material_modal,null)
+        var v1 = layoutInflater.inflate(R.layout.material_modal2,null)
         builder.setView(v1)
         val material_Dialog = builder.show()
 
         val confirm_Button = v1.findViewById<Button>(R.id.material_confirm)
         val cancle_button = v1.findViewById<Button>(R.id.material_cancle)
-        val delete_button = v1.findViewById<Button>(R.id.material_delete)
 
         val edit_material = v1.findViewById<EditText>(R.id.edit_material)
         val edit_unit = v1.findViewById<EditText>(R.id.edit_unit)
@@ -79,11 +78,6 @@ class ShopActivity3 : AppCompatActivity() {
         }
         cancle_button.setOnClickListener {
             material_Dialog.dismiss()
-        }
-        delete_button.setOnClickListener {
-            Log.v("as", position.toString())
-            material_Dialog.dismiss()
-            //해당 재료 삭제
         }
     }
 }
