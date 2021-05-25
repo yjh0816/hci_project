@@ -66,7 +66,9 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         holder.textView.setOnClickListener {
         val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
         val isOpen = false
+        val pos = position
         intent.putExtra("isOpen",isOpen)
+        intent.putExtra("pos", pos)
         ContextCompat.startActivity(holder.textView.context, intent, null)
         }
     }

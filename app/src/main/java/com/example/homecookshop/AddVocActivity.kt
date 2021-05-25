@@ -27,6 +27,7 @@ class AddVocActivity : AppCompatActivity() {
     var data:ArrayList<MyData2> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter2
+    var pos: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_voc)
@@ -35,6 +36,12 @@ class AddVocActivity : AppCompatActivity() {
             val isOpen = intent.getBooleanExtra("isOpen",false)
 
             //Log.v("isOpen",isOpen.toString())
+        }
+        if(intent.hasExtra("pos")){
+            //val isOpen = intent.getStringExtra("isOpen")
+            pos = intent.getIntExtra("pos",0)
+
+            //Log.v("pos", pos.toString())
         }
         addFood.setOnClickListener {
             //material_modal()
@@ -156,7 +163,9 @@ class AddVocActivity : AppCompatActivity() {
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
     fun readFileScan(scan: Scanner){
+        var count = 0
         while(scan.hasNextLine()){
+
             val word = scan.nextLine()
             val meaning = scan.nextLine()
             val food = scan.nextLine()
@@ -165,10 +174,13 @@ class AddVocActivity : AppCompatActivity() {
 
             for(i in arr.indices){
                 //Log.v("as",arr[i])
+                if(pos != count){
+                    break;
+                }
                 var arr2 = arr[i].split(' ')
                 data.add(MyData2(arr2[0], arr2[1], arr2[2],false))
             }
-
+            count = count + 1
         }
         scan.close()
     }
