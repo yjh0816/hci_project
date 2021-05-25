@@ -1,6 +1,8 @@
 package com.example.homecookshop
 
 import android.content.Intent
+import android.graphics.Paint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,16 +30,13 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         items.removeAt(pos)
         notifyItemRemoved(pos)
     }
-
-    fun showMeaning(itemView: ViewHolder, data: MyData, pos:Int){
-        if(itemView.textView2.visibility == View.GONE){
+    fun shopping(itemView: ViewHolder, data: MyData, pos:Int){
+        if(itemView.textView.paintFlags == Paint.STRIKE_THRU_TEXT_FLAG){
             data.isOpen = true
-            itemView.textView2.visibility = View.VISIBLE
-
-        }else if(itemView.textView2.visibility == View.VISIBLE){
+            itemView.textView.paintFlags = 0
+        }else if(itemView.textView.paintFlags == 0){
             data.isOpen = false
-            itemView.textView2.visibility = View.GONE
-
+            itemView.textView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         }
     }
 
@@ -62,23 +61,24 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position].word
-        holder.textView2.text = items[position].meaning
-
-        if(items[position].isOpen)
-            holder.textView2.visibility = View.VISIBLE
-        else
-            holder.textView2.visibility = View.GONE
+        //holder.textView2.text = items[position].meaning
+        if(items[position].isOpen){
+            holder.textView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        }
+        else{
+            holder.textView.paintFlags = 0
+        }
         holder.textView.setOnClickListener {
-        val isOpen = false
-        val pos = position
-        Toast.makeText(holder.textView.context, "clicked", Toast.LENGTH_SHORT).show()
+        //val isOpen = false
+        //val pos = position
+        //Toast.makeText(holder.textView.context, "clicked", Toast.LENGTH_SHORT).show()
         //click event
         }
         holder.textView.setOnLongClickListener {
             val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
-            val isOpen = false
+           // val isOpen = false
             val pos = position
-            intent.putExtra("isOpen",isOpen)
+            //intent.putExtra("isOpen",isOpen)
             intent.putExtra("pos", pos)
             ContextCompat.startActivity(holder.textView.context, intent, null)
             true

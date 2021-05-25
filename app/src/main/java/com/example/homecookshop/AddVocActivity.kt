@@ -30,7 +30,7 @@ class AddVocActivity : AppCompatActivity() {
     var data:ArrayList<MyData2> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter2
-    var pos: Int = 0
+    var pos: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

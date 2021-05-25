@@ -74,7 +74,7 @@ class CookActivity : AppCompatActivity() {
                 if(isTtsReady)
                     tts.speak(data.word, TextToSpeech.QUEUE_ADD, null, null)
                 //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
-                adapter.showMeaning(holder,data,position)
+                adapter.shopping(holder,data,position)
             }
 
         }
