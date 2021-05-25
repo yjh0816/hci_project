@@ -17,7 +17,11 @@ class AddNewRecipe : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_recipe)
+<<<<<<< HEAD
         addFood.setOnClickListener {
+=======
+        addRecipe.setOnClickListener {
+>>>>>>> ede6b30ef90bd58c9f0a1bf270c6c7a6407eee75
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
