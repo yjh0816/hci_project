@@ -80,7 +80,7 @@ class AddVocActivity : AppCompatActivity() {
 //            finish()
 //        }
     }
-    private fun material_modal(str_food: String, position: Int){
+    private fun material_modal(str_word:String, str_meaning:String, str_food: String){
         var builder  = AlertDialog.Builder(this)
         builder.setTitle("재료 추가")
         builder.setView(R.mipmap.ic_launcher)
@@ -97,22 +97,16 @@ class AddVocActivity : AppCompatActivity() {
         val edit_unit = v1.findViewById<EditText>(R.id.edit_unit)
         val edit_count = v1.findViewById<EditText>(R.id.edit_count)
 
-        val arr = str_food.split('/')
-        lateinit var food_arr:List<String>
-
-        for(i in arr.indices){
-            Log.v("as",arr[i])
-            food_arr = arr[i].split(' ')
-        }
-
-        edit_material.setText(food_arr[0])
+        edit_material.setText(str_word)
+        edit_count.setText(str_meaning)
+        edit_unit.setText(str_food)
 
         confirm_Button.setOnClickListener {
             val material = edit_material.text.toString()
             val unit = edit_unit.text.toString()
             val count  = edit_count.text.toString()
             val input_text = material+unit+count
-            //writeFile(input_text)
+            writeFile(input_text)
         }
         cancle_button.setOnClickListener {
             material_Dialog.dismiss()
@@ -134,10 +128,8 @@ class AddVocActivity : AppCompatActivity() {
                 data: MyData2,
                 position: Int
             ) {
-                //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
                 //adapter.showMeaning(holder,data,position)
-                Log.v("as",data.food)
-                //material_modal(data.food, position)
+                material_modal(data.word, data.meaning, data.food)
             }
 
         }
@@ -165,7 +157,6 @@ class AddVocActivity : AppCompatActivity() {
     fun readFileScan(scan: Scanner){
         var count = 0
         while(scan.hasNextLine()){
-
             val word = scan.nextLine()
             val meaning = scan.nextLine()
             val food = scan.nextLine()
@@ -187,7 +178,7 @@ class AddVocActivity : AppCompatActivity() {
 
     private fun initData() {
         try{
-            val scan2 = Scanner(openFileInput("out.txt"))
+            val scan2 = Scanner(openFileInput( "out.txt"))
             readFileScan(scan2)
         }catch (e: Exception){
             //Toast.makeText(this, "추가된 단어가 없음", Toast.LENGTH_SHORT).show()
@@ -196,9 +187,9 @@ class AddVocActivity : AppCompatActivity() {
         val scan = Scanner(resources.openRawResource(R.raw.words))
         readFileScan(scan)
     }
-    private fun writeFile(word: String, meaning: String, food: String) {
-        val output = PrintStream(openFileOutput("out.txt", Context.MODE_APPEND))
-        output.println(word)
+    private fun writeFile(input_text: String, meaning: String, food: String) {
+        val output = PrintStream(openFileOutput("words.txt", Context.MODE_APPEND))
+        //output.println(word)
         output.println(meaning)
         output.println(food)
         output.close()
