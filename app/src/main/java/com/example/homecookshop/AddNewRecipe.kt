@@ -16,8 +16,8 @@ class AddNewRecipe : AppCompatActivity() {
     var isTtsReady = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        addRecipe.setOnClickListener {
+        setContentView(R.layout.activity_add_new_recipe)
+        addFood.setOnClickListener {
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
@@ -25,11 +25,11 @@ class AddNewRecipe : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        shop.setOnClickListener {
+        shop_add.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
         }
-        cook.setOnClickListener {
+        cook_add.setOnClickListener {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
