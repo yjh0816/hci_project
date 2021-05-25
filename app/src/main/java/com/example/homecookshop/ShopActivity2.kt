@@ -18,16 +18,17 @@ import kotlinx.android.synthetic.main.activity_main.cook
 import kotlinx.android.synthetic.main.activity_main.recipe
 import kotlinx.android.synthetic.main.activity_main.shop
 import kotlinx.android.synthetic.main.activity_shop.*
+import kotlinx.android.synthetic.main.activity_shop2.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ShopActivity : AppCompatActivity() {
+class ShopActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shop)
-        first.setOnClickListener {
-            material_modal("된장찌개","된장","100","g",0)
+        setContentView(R.layout.activity_shop2)
+        second.setOnClickListener {
+            material_modal("된장찌개","물","200","ml",0)
         }
         recipe.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
