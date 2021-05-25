@@ -22,7 +22,7 @@ class CookActivity : AppCompatActivity() {
     var isTtsReady = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_cook)
 
         recipe.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -39,25 +39,13 @@ class CookActivity : AppCompatActivity() {
 
         initData()
         initRecyclerView()
-        initTTS()
+
     }
 
-    private fun initTTS() {
-        tts = TextToSpeech(this, TextToSpeech.OnInitListener {
-            isTtsReady = true
-            tts.language = Locale.US
-        })
-    }
 
-    override fun onStop() {
-        super.onStop()
-        tts.stop()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        tts.shutdown()
-    }
+
+
 
     private fun initRecyclerView() {
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
@@ -73,7 +61,7 @@ class CookActivity : AppCompatActivity() {
             ) {
                 if(isTtsReady)
                     tts.speak(data.word, TextToSpeech.QUEUE_ADD, null, null)
-                //Toast.makeText(applicationContext, data.meaning, Toast.LENGTH_SHORT).show()
+
                 adapter.shopping(holder,data,position)
             }
 
@@ -113,7 +101,7 @@ class CookActivity : AppCompatActivity() {
             val scan2 = Scanner(openFileInput("out.txt"))
             readFileScan(scan2)
         }catch (e:Exception){
-            Toast.makeText(this, "추가된 단어가 없음", Toast.LENGTH_SHORT).show()
+
         }
 
         val scan = Scanner(resources.openRawResource(R.raw.words))

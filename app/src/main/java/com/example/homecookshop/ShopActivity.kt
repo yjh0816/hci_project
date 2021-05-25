@@ -22,7 +22,7 @@ class ShopActivity : AppCompatActivity() {
     var isTtsReady = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_shop)
 
         recipe.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -39,24 +39,7 @@ class ShopActivity : AppCompatActivity() {
 
         initData()
         initRecyclerView()
-        initTTS()
-    }
 
-    private fun initTTS() {
-        tts = TextToSpeech(this, TextToSpeech.OnInitListener {
-            isTtsReady = true
-            tts.language = Locale.US
-        })
-    }
-
-    override fun onStop() {
-        super.onStop()
-        tts.stop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        tts.shutdown()
     }
 
     private fun initRecyclerView() {
@@ -113,7 +96,7 @@ class ShopActivity : AppCompatActivity() {
             val scan2 = Scanner(openFileInput("out.txt"))
             readFileScan(scan2)
         }catch (e:Exception){
-            Toast.makeText(this, "추가된 단어가 없음", Toast.LENGTH_SHORT).show()
+
         }
 
         val scan = Scanner(resources.openRawResource(R.raw.words))
