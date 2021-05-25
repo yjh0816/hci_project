@@ -1,6 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#EDEDED"
+    android:backgroundTint="#EDEDED"
     android:orientation="vertical">
 
     <EditText
@@ -11,6 +13,8 @@
         android:layout_marginRight="30dp"
         android:ems="10"
         android:hint="재료"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:inputType="textPersonName" />
 
     <LinearLayout
@@ -27,6 +31,8 @@
             android:layout_marginRight="30dp"
             android:ems="10"
             android:hint="수량"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:inputType="textPersonName" />
 
         <EditText
@@ -37,6 +43,8 @@
             android:layout_marginRight="30dp"
             android:ems="10"
             android:hint="단위"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:inputType="textPersonName" />
 
     </LinearLayout>
@@ -55,6 +63,8 @@
             android:layout_height="match_parent"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E74C3C"
             android:text="삭제" />
 
         <Button
@@ -64,6 +74,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
             android:text="취소" />
 
         <Button
@@ -72,6 +83,8 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
+            android:backgroundTint="#3498DB"
+            android:textColor="#FFFFFF"
             android:text="수정" />
     </LinearLayout>
 
