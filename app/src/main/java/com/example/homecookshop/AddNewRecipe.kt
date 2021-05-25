@@ -14,14 +14,14 @@ class AddNewRecipe : AppCompatActivity() {
     lateinit var adapter: MyAdapter
     lateinit var tts: TextToSpeech
     var isTtsReady = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_recipe)
-<<<<<<< HEAD
         addFood.setOnClickListener {
-=======
-        addRecipe.setOnClickListener {
->>>>>>> ede6b30ef90bd58c9f0a1bf270c6c7a6407eee75
+
+        }
+        addFood.setOnClickListener {
             val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
