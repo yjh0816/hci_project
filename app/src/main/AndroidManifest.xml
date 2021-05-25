@@ -12,10 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".material_delete"></activity>
         <activity android:name=".material_add" />
         <activity android:name=".AddNewRecipe" />
         <activity android:name=".material_confirm" />
+=======
+        <activity android:name=".ShopActivity4"></activity>
+        <activity android:name=".ShopActivity3" />
+        <activity android:name=".ShopActivity2" />
+>>>>>>> 456d24d4291f4d630121db30f0c75ba888513f8f
         <activity android:name=".AddRecipi" />
         <activity android:name=".StartActivity">
             <intent-filter>

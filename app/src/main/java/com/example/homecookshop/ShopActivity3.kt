@@ -1,6 +1,7 @@
 package com.example.homecookshop
 
 import android.content.Intent
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -18,16 +19,18 @@ import kotlinx.android.synthetic.main.activity_main.cook
 import kotlinx.android.synthetic.main.activity_main.recipe
 import kotlinx.android.synthetic.main.activity_main.shop
 import kotlinx.android.synthetic.main.activity_shop.*
+import kotlinx.android.synthetic.main.activity_shop2.*
+import kotlinx.android.synthetic.main.activity_shop3.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ShopActivity : AppCompatActivity() {
+class ShopActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shop)
-        first.setOnClickListener {
-            material_modal("된장찌개","된장","100","g",0)
+        setContentView(R.layout.activity_shop3)
+        third.setOnClickListener {
+            material_modal("된장찌개","호박","1","개",0)
         }
         recipe.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -41,6 +44,8 @@ class ShopActivity : AppCompatActivity() {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
+        linegogo3.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
+
     }
     private fun material_modal(str_name:String, str_word:String, str_meaning:String, str_food: String, position:Int){
         var builder  = AlertDialog.Builder(this)
@@ -71,7 +76,7 @@ class ShopActivity : AppCompatActivity() {
             //writeFile(input_text)
 
             material_Dialog.dismiss()
-            val intent = Intent(this, ShopActivity2::class.java)
+            val intent = Intent(this, ShopActivity4::class.java)
             startActivity(intent)
         }
         cancle_button.setOnClickListener {
