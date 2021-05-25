@@ -37,22 +37,19 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="35sp"
             android:layout_weight="5"
+            android:gravity="center"
+            android:hint="이름을 적어주세요"
+            android:textSize="35sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/searchRecipe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="find" />
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
     </androidx.recyclerview.widget.RecyclerView>
 

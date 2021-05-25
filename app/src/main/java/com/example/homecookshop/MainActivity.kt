@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.row.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -39,7 +40,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
-
+//        textView.setOnClickListener {
+//            val intent = Intent(this, AddVocActivity::class.java)
+//            val isOpen = false
+//            intent.putExtra("isOpen",isOpen)
+//            startActivity(intent)
+//        }
         initData()
         initRecyclerView()
 //        initTTS()

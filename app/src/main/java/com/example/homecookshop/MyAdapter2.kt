@@ -1,17 +1,14 @@
 package com.example.homecookshop
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+class MyAdapter2(val items:ArrayList<MyData2>) : RecyclerView.Adapter<MyAdapter2.ViewHolder>(){
     interface OnItemClickListener{
-        fun OnItemClick(holder: ViewHolder, view: View, data:MyData, position: Int)
+        fun OnItemClick(holder: ViewHolder, view: View, data:MyData2, position: Int)
     }
 
     var itemClickListener:OnItemClickListener?=null
@@ -28,7 +25,7 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         notifyItemRemoved(pos)
     }
 
-    fun showMeaning(itemView: ViewHolder, data: MyData, pos:Int){
+    fun showMeaning(itemView: ViewHolder, data: MyData2, pos:Int){
         if(itemView.textView2.visibility == View.GONE){
             data.isOpen = true
             itemView.textView2.visibility = View.VISIBLE
@@ -57,20 +54,12 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = items[position].word
-        holder.textView2.text = items[position].meaning
+        holder.textView2.text = items[position].meaning+" "+items[position].food
 
         if(items[position].isOpen)
             holder.textView2.visibility = View.VISIBLE
         else
             holder.textView2.visibility = View.GONE
-        holder.textView.setOnClickListener {
-        val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
-        val isOpen = false
-        val pos = position
-        intent.putExtra("isOpen",isOpen)
-        intent.putExtra("pos", pos)
-        ContextCompat.startActivity(holder.textView.context, intent, null)
-        }
     }
 
     override fun getItemCount(): Int {
