@@ -38,7 +38,7 @@ class CookActivity : AppCompatActivity() {
         }
 
         initData()
-        initRecyclerView()
+        // initRecyclerView()
 
     }
 
