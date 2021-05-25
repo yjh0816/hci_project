@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         initData()
         initRecyclerView()
-        initTTS()
+//        initTTS()
     }
 
 

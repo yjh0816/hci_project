@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorYellow"
-    tools:context=".MainActivity">
+    tools:context=".AddRecipi   ">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,16 +40,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="이름을 적어 주세요!"
             android:textSize="35sp"
             android:layout_weight="5"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/searchRecipe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="find" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
