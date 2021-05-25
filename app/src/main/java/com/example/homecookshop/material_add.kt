@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import kotlinx.android.synthetic.main.activity_add_new_recipe.*
 import kotlinx.android.synthetic.main.activity_add_voc.*
+import kotlinx.android.synthetic.main.activity_add_voc.addFood
 
 class material_add : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
