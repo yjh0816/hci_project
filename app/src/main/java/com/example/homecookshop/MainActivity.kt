@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         addRecipe.setOnClickListener {
-            val intent = Intent(this, AddVocActivity::class.java)
+            val intent = Intent(this, AddNewRecipe::class.java)
             startActivity(intent)
         }
         recipe.setOnClickListener {

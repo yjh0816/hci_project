@@ -49,7 +49,8 @@ class AddVocActivity : AppCompatActivity() {
             //Log.v("pos", pos.toString())
         }
         addFood.setOnClickListener {
-            //material_modal()
+            val intent = Intent(this, material_add::class.java)
+            startActivity(intent)
         }
         recipe_add.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -108,13 +109,8 @@ class AddVocActivity : AppCompatActivity() {
         edit_unit.setText(str_food)
 
         confirm_Button.setOnClickListener {
-            val material = edit_material.text.toString()
-            val unit = edit_unit.text.toString()
-            val count  = edit_count.text.toString()
-            val input_text = material+unit+count
-            //writeFile(input_text)
-
-            writeFile(str_name, material,unit,count,position)
+            val intent = Intent(this, material_confirm::class.java)
+            startActivity(intent)
             material_Dialog.dismiss()
 
         }
