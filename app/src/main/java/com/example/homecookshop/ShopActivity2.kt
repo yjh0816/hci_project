@@ -1,6 +1,7 @@
 package com.example.homecookshop
 
 import android.content.Intent
+import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.recipe
 import kotlinx.android.synthetic.main.activity_main.shop
 import kotlinx.android.synthetic.main.activity_shop.*
 import kotlinx.android.synthetic.main.activity_shop2.*
+import kotlinx.android.synthetic.main.activity_start.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -27,6 +29,7 @@ class ShopActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop2)
+        linegogo.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
         second.setOnClickListener {
             material_modal("된장찌개","물","200","ml",0)
         }
@@ -42,6 +45,9 @@ class ShopActivity2 : AppCompatActivity() {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
+
+
+
     }
     private fun material_modal(str_name:String, str_word:String, str_meaning:String, str_food: String, position:Int){
         var builder  = AlertDialog.Builder(this)
