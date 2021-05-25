@@ -27,7 +27,7 @@ class AddVocActivity : AppCompatActivity() {
     var data:ArrayList<MyData2> = ArrayList()
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: MyAdapter2
-    var pos: Int = 0
+    var pos: Int = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_voc)
@@ -39,9 +39,9 @@ class AddVocActivity : AppCompatActivity() {
         }
         if(intent.hasExtra("pos")){
             //val isOpen = intent.getStringExtra("isOpen")
-            pos = intent.getIntExtra("pos",0)
+            pos = intent.getIntExtra("pos",-1)
 
-            //Log.v("pos", pos.toString())
+            Log.v("pos", pos.toString())
         }
         addFood.setOnClickListener {
             //material_modal()

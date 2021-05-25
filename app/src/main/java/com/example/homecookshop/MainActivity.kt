@@ -40,12 +40,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
-//        textView.setOnClickListener {
-//            val intent = Intent(this, AddVocActivity::class.java)
-//            val isOpen = false
-//            intent.putExtra("isOpen",isOpen)
-//            startActivity(intent)
-//        }
         initData()
         initRecyclerView()
         initTTS()

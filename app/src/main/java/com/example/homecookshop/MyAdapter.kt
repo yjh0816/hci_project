@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -47,6 +48,10 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
             itemView.setOnClickListener {
                 itemClickListener?.OnItemClick(this, it, items[adapterPosition], adapterPosition)
             }
+            itemView.setOnLongClickListener {
+                true
+                //itemClickListener?.OnItemClick(this, it, items[adapterPosition], adapterPosition)
+            }
         }
     }
 
@@ -64,12 +69,19 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         else
             holder.textView2.visibility = View.GONE
         holder.textView.setOnClickListener {
-        val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
         val isOpen = false
         val pos = position
-        intent.putExtra("isOpen",isOpen)
-        intent.putExtra("pos", pos)
-        ContextCompat.startActivity(holder.textView.context, intent, null)
+        Toast.makeText(holder.textView.context, "clicked", Toast.LENGTH_SHORT).show()
+        //click event
+        }
+        holder.textView.setOnLongClickListener {
+            val intent = Intent(holder.textView?.context, AddVocActivity::class.java)
+            val isOpen = false
+            val pos = position
+            intent.putExtra("isOpen",isOpen)
+            intent.putExtra("pos", pos)
+            ContextCompat.startActivity(holder.textView.context, intent, null)
+            true
         }
     }
 
