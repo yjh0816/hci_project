@@ -67,25 +67,28 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/recipe_add"
+            android:id="@+id/recipe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="recipe" />
+            android:text="레시피"
+            android:background="@color/colorYellow"/>
 
         <Button
-            android:id="@+id/shop_add"
+            android:id="@+id/shop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="shop" />
+            android:text="장보기"
+            />
 
         <Button
-            android:id="@+id/cook_add"
+            android:id="@+id/cook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="cook" />
+            android:text="추천쿡"
+           />
     </LinearLayout>
 
 </LinearLayout>

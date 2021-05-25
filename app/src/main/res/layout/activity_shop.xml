@@ -25,10 +25,11 @@
         <Button
             android:id="@+id/addRecipe"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="21dp"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="#414148"
             android:text="장보기 종료"
+            android:textColor="#fcfbfc"
             android:textSize="10sp" />
     </LinearLayout>
     <LinearLayout
@@ -44,12 +45,13 @@
             android:layout_weight="5"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/searchRecipe"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/searchRecipe2"
+            android:layout_width="12dp"
+            android:layout_height="51dp"
             android:layout_weight="1"
-            android:text="find" />
+            android:layout_marginTop="10sp"
+            app:srcCompat="@drawable/searchimg" />
     </LinearLayout>
 
     <LinearLayout
