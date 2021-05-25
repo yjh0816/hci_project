@@ -9,7 +9,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_add_new_recipe.*
 import kotlinx.android.synthetic.main.activity_add_voc.*
+import kotlinx.android.synthetic.main.activity_add_voc.addFood
 import kotlinx.android.synthetic.main.activity_main.*
 
 class material_confirm : AppCompatActivity() {
@@ -22,6 +24,7 @@ class material_confirm : AppCompatActivity() {
             val intent = Intent(this, material_add::class.java)
             startActivity(intent)
         }
+
         recipe_add.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
