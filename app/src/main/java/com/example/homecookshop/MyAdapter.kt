@@ -34,11 +34,11 @@ class MyAdapter(val items:ArrayList<MyData>) : RecyclerView.Adapter<MyAdapter.Vi
         if(itemView.textView.paintFlags == Paint.STRIKE_THRU_TEXT_FLAG){
             data.isOpen = true
             itemView.textView.paintFlags = 0
-            Toast.makeText(itemView.textView.context,data.word+"\n장바구니 해제",Toast.LENGTH_SHORT).show()
+            Toast.makeText(itemView.textView.context,data.word+"\n \n 장바구니해제",Toast.LENGTH_SHORT).show()
         }else if(itemView.textView.paintFlags == 0){
             data.isOpen = false
             itemView.textView.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            Toast.makeText(itemView.textView.context,data.word+"\n장바구니 추가",Toast.LENGTH_SHORT).show()
+            Toast.makeText(itemView.textView.context,data.word+"\n \n 장바구니추가",Toast.LENGTH_SHORT).show()
         }
     }
 

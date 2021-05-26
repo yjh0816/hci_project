@@ -42,6 +42,15 @@ class AddVocActivity : AppCompatActivity() {
 
             //Log.v("pos", pos.toString())
         }
+        if(pos==0){
+            menu_name.setText("된장찌개")
+        }else if(pos==1){
+            menu_name.setText("김치찌개")
+        }else if(pos==2){
+            menu_name.setText("청국장")
+        }else if(pos==3){
+            menu_name.setText("카레")
+        }
         addFood.setOnClickListener {
             val intent = Intent(this, material_add::class.java)
             startActivity(intent)

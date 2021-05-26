@@ -14,11 +14,12 @@
         android:orientation="horizontal">
 
         <TextView
+            android:fontFamily="sans-serif-black"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="HomeCook"
+            android:text="HomeCOOK"
             android:textSize="35sp"
             android:textStyle="bold" />
 
@@ -51,7 +52,7 @@
             android:layout_height="51dp"
             android:layout_weight="1"
             android:layout_marginTop="10sp"
-            app:srcCompat="@drawable/searchimg" />
+            app:srcCompat="@drawable/search" />
     </LinearLayout>
 
     <LinearLayout
@@ -112,6 +113,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="#bebebe"
             android:id="@+id/recipe_add10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,6 +129,7 @@
             android:background="@color/colorYellow"/>
 
         <Button
+            android:background="#bebebe"
             android:id="@+id/cook_add10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
