@@ -35,7 +35,7 @@ class IntroActivity : AppCompatActivity() {
             ADD_VOC_REQUEST ->{
                 if(resultCode==Activity.RESULT_OK){
                     val str = data?.getSerializableExtra("voc") as MyData
-                    Toast.makeText(this, str.word+"단어 추가됨", Toast.LENGTH_SHORT).show()
+
                 }
             }
         }
