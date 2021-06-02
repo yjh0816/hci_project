@@ -70,7 +70,7 @@
             android:background="@color/colorDarkYellow"
             android:fontFamily="sans-serif-black"
             android:padding="20dp"
-            android:text="된장 100 g"
+            android:text="된장    100     g"
             android:textColor="#808080"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -83,7 +83,7 @@
             android:background="@color/colorDarkYellow"
             android:fontFamily="sans-serif-black"
             android:padding="20dp"
-            android:text="물 200 ml"
+            android:text="물     200     ml"
             android:textColor="#808080"
             android:textSize="18sp"
             android:textStyle="bold" />
