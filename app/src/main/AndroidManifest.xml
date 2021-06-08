@@ -35,15 +35,7 @@
         <activity android:name=".CookActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".AddVocActivity" />
-        <activity android:name=".IntroActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".material_add" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".material_confirm" />
         <activity android:name=".material_delete" />
     </application>

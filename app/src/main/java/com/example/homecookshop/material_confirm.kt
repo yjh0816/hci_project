@@ -19,10 +19,6 @@ class material_confirm : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_material_confirm)
         val textView4: LinearLayout = findViewById(R.id.textView4)
-        addFood.setOnClickListener {
-            val intent = Intent(this, material_add::class.java)
-            startActivity(intent)
-        }
 
         recipe_add4.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

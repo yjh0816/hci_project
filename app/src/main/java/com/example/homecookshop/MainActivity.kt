@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        refrig_add.setOnClickListener {
+            val intent = Intent(this, RefActivity::class.java)
+            startActivity(intent)
+        }
         shop_add.setOnClickListener {
             val intent = Intent(this, ShopActivity::class.java)
             startActivity(intent)
