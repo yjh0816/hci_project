@@ -46,9 +46,7 @@ class RefActivity2 : AppCompatActivity() {
         confirm_Button.setOnClickListener {
             material_Dialog.dismiss()
 
-/*
             val intent = Intent(this, RefActivity3::class.java)
-*/
             startActivity(intent)
 
         }
