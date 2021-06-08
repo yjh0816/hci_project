@@ -14,10 +14,7 @@ class ShopActivity4 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop4)
-        linegogo4.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
-        third.setOnClickListener {
-            material_modal("된장찌개","호박","1","개",0)
-        }
+
         recipe_add10.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

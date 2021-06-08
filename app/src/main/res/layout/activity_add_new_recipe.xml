@@ -11,7 +11,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="#F4C650"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="0dp"
@@ -19,16 +22,17 @@
             android:layout_weight="5"
             android:fontFamily="sans-serif-black"
             android:gravity="center"
+            android:paddingLeft="20dp"
             android:text="HomeCOOK"
-            android:textSize="35sp"
-            android:textStyle="bold" />
+            android:textAlignment="textStart"
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/addFood"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorYellow"
+            android:background="#F4C650"
             android:text="+"
             android:textSize="36sp" />
     </LinearLayout>
@@ -66,30 +70,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+            <Button
+                android:id="@+id/recipe_add11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorYellow"
+                android:fontFamily="sans-serif-black"
+                android:text="레시피"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/recipe_add11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="레시피"
-            android:background="@color/colorYellow"/>
+            <Button
+                android:id="@+id/shop_add11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#bebebe"
+                android:fontFamily="sans-serif-black"
+                android:text="장보기"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:background="#bebebe"
-            android:id="@+id/shop_add11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="장보기" />
-
-        <Button
-            android:background="#bebebe"
-            android:id="@+id/cook_add11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="추천쿡" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/cook_add11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#bebebe"
+                android:fontFamily="sans-serif-black"
+                android:text="추천쿡"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
 </LinearLayout>

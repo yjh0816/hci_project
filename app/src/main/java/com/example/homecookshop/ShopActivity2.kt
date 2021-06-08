@@ -13,7 +13,6 @@ class ShopActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop2)
-        linegogo.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
         second.setOnClickListener {
             material_modal("된장찌개","물","200","ml",0)
         }

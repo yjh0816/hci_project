@@ -28,7 +28,6 @@ class ShopActivity3 : AppCompatActivity() {
             val intent = Intent(this, CookActivity::class.java)
             startActivity(intent)
         }
-        linegogo3.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG)
 
     }
     private fun material_modal(str_name:String, str_word:String, str_meaning:String, str_food: String, position:Int){
