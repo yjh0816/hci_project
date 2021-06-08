@@ -69,7 +69,62 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="7"
+                android:padding="20dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="김치"
+                    android:background="#c2e0f0"
+                    android:textColor="#00498c"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="0.5"
+                    android:background="#c2e0f0"
+                    android:textColor="#00498c"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="포기"
+                    android:background="#c2e0f0"
+                    android:textColor="#00498c"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                app:srcCompat="@drawable/ic_baseline_check_24" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -149,8 +204,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="호박"
-                    android:background="#c2e0f0"
-                    android:textColor="#00498c"
+                    android:textColor="@android:color/darker_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
                 <TextView
@@ -159,8 +213,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="1"
-                    android:background="#c2e0f0"
-                    android:textColor="#00498c"
+                    android:textColor="@android:color/darker_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
                 <TextView
@@ -169,8 +222,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
                     android:text="개"
-                    android:background="#c2e0f0"
-                    android:textColor="#00498c"
+                    android:textColor="@android:color/darker_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

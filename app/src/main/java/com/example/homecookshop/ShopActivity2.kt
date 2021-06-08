@@ -14,7 +14,7 @@ class ShopActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shop2)
         second.setOnClickListener {
-            material_modal("된장찌개","물","200","ml",0)
+            material_modal("된장찌개","물","300","ml",0)
         }
         recipe_add8.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

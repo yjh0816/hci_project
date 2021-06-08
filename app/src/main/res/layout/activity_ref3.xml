@@ -68,7 +68,7 @@
             android:background="@drawable/border"
             android:fontFamily="sans-serif-black"
             android:padding="20dp"
-            android:text="보유 재료 : 김치 0.5 포기  물 200 ml"
+            android:text="보유 재료 : 김치 1 포기,  물 100 ml"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
-                    android:text="0.5"
+                    android:text="1"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-black"
-                    android:text="200"
+                    android:text="100"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
