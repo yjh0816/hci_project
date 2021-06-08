@@ -52,8 +52,7 @@ class AddVocActivity : AppCompatActivity() {
             menu_name.setText("카레")
         }
         addFood.setOnClickListener {
-            val intent = Intent(this, material_add::class.java)
-            startActivity(intent)
+            material_modal("", "", "", "", 0)
         }
         recipe_add2.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -112,9 +111,10 @@ class AddVocActivity : AppCompatActivity() {
         edit_unit.setText(str_food)
 
         confirm_Button.setOnClickListener {
+            material_Dialog.dismiss()
+
             val intent = Intent(this, material_confirm::class.java)
             startActivity(intent)
-            material_Dialog.dismiss()
 
         }
         cancle_button.setOnClickListener {
