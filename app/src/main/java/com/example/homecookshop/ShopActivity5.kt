@@ -10,15 +10,15 @@ import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_shop3.third
 import kotlinx.android.synthetic.main.activity_shop4.*
 
-class ShopActivity4 : AppCompatActivity() {
+class ShopActivity5 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shop4)
+        setContentView(R.layout.activity_shop5)
         addRecipe.setOnClickListener {
             material_modal("","장보기를 종료합니다.","","",0)
         }
         recipe_add10.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AddNewRecipe5::class.java)
             startActivity(intent)
         }
         shop_add10.setOnClickListener {
@@ -55,7 +55,7 @@ class ShopActivity4 : AppCompatActivity() {
             //writeFile(input_text)
 
             material_Dialog.dismiss()
-            val intent = Intent(this, ShopActivity5::class.java)
+            val intent = Intent(this, ShopActivity2::class.java)
             startActivity(intent)
         }
         cancle_button.setOnClickListener {

@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RefActivity3"></activity>
+        <activity android:name=".ShopActivity5"></activity>
+        <activity android:name=".MainActivity3" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".RefActivity3" />
         <activity android:name=".RefActivity2" />
         <activity android:name=".RefActivity" />
         <activity android:name=".CookActivity3" />
@@ -35,7 +38,7 @@
         <activity android:name=".CookActivity" />
         <activity android:name=".ShopActivity" />
         <activity android:name=".AddVocActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".material_confirm" />
         <activity android:name=".material_delete" />
     </application>

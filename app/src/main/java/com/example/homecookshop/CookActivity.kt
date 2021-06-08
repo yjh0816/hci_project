@@ -15,6 +15,10 @@ class CookActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cook)
+        addRecipe.setOnClickListener {
+            val intent = Intent(this, MainActivity3::class.java)
+            startActivity(intent)
+        }
         kimchi_rate.setOnClickListener {
             val intent = Intent(this, CookActivity2::class.java)
             startActivity(intent)
@@ -36,7 +40,7 @@ class CookActivity : AppCompatActivity() {
             startActivity(intent)
         }
         shop_add31.setOnClickListener {
-            val intent = Intent(this, ShopActivity::class.java)
+            val intent = Intent(this, ShopActivity4::class.java)
             startActivity(intent)
         }
         cook_add31.setOnClickListener {

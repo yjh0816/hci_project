@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorYellow"
-    tools:context=".CookActivity">
+    tools:context=".ShopActivity5">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,10 +32,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/ic_baseline_cached_24"
+            android:background="@drawable/ic_baseline_remove_shopping_cart_24"
             android:textSize="36sp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,101 +63,13 @@
             app:srcCompat="@drawable/searchimg" />
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/first"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/border"
-            android:fontFamily="sans-serif-black"
-            android:padding="20dp"
-            android:text="남은 재료 : 물 200 ml, 김치 0.5 포기"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/kimchi_rate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
-                android:layout_weight="1"
-                android:background="@drawable/border"
-                android:fontFamily="sans-serif-black"
-                android:padding="20dp"
-                android:text="김치찜 추천률 :"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/kimchi_percent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/border"
-                android:fontFamily="sans-serif-black"
-                android:padding="20dp"
-                android:text="66%"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/curry_rate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/border"
-                android:fontFamily="sans-serif-black"
-                android:padding="20dp"
-                android:text="카레 추천률 :"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/curry_percent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/border"
-                android:fontFamily="sans-serif-black"
-                android:padding="20dp"
-                android:text="25%"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -169,7 +80,7 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <Button
-                android:id="@+id/recipe_add31"
+                android:id="@+id/recipe_add10"
                 android:layout_gravity="center"
                 android:layout_width="42dp"
                 android:layout_height="50dp"
@@ -190,7 +101,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/refrig_add31"
+                android:id="@+id/refrig_add10"
                 android:layout_gravity="center"
                 android:layout_width="42dp"
                 android:layout_height="50dp"
@@ -210,11 +121,11 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <Button
-                android:id="@+id/shop_add31"
+                android:id="@+id/shop_add10"
                 android:layout_gravity="center"
                 android:layout_width="42dp"
                 android:layout_height="50dp"
-                android:background="@drawable/menu3" />
+                android:background="@drawable/menu6" />
             <TextView
                 android:id="@+id/text33"
                 android:textAlignment="center"
@@ -231,11 +142,11 @@
             android:layout_weight="1"
             android:orientation="vertical">
             <Button
-                android:id="@+id/cook_add31"
+                android:id="@+id/cook_add10"
                 android:layout_gravity="center"
                 android:layout_width="42dp"
                 android:layout_height="50dp"
-                android:background="@drawable/menu4" />
+                android:background="@drawable/menu1" />
             <TextView
                 android:id="@+id/text44"
                 android:textAlignment="center"
