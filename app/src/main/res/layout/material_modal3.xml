@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/papersheet"
+    android:background="@drawable/blackpapersheet"
     android:orientation="vertical">
 
     <EditText
@@ -16,7 +16,8 @@
         android:hint="재료"
         android:inputType="textPersonName"
         android:textColor="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="28sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
             android:hint="수량"
             android:inputType="textPersonName"
             android:textColor="#000000"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
@@ -50,6 +52,7 @@
             android:hint="단위"
             android:inputType="textPersonName"
             android:textColor="#000000"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -57,38 +60,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="200dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/material_delete"
             android:layout_width="120sp"
             android:layout_height="match_parent"
-            android:background="@drawable/redpapersheet"
+            android:background="@drawable/papersheet"
             android:text="삭제"
-            android:textColor="#FFFFFF"
-            android:textFontWeight="1"
-            android:textSize="20sp"
+            android:textColor="#000000"
+
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/material_cancle"
             android:layout_width="120sp"
             android:layout_height="match_parent"
-            android:background="@drawable/whitepapersheet"
+            android:background="@drawable/papersheet"
             android:text="취소"
-            android:textFontWeight="1"
-            android:textSize="20sp"
+
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/material_confirm"
             android:layout_width="120sp"
             android:layout_height="match_parent"
-            android:background="@drawable/bluepapersheet"
+            android:background="@drawable/papersheet"
             android:text="수정"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textSize="28sp"
             android:textStyle="bold" />
     </LinearLayout>
 
