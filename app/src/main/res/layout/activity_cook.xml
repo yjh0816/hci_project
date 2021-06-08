@@ -27,14 +27,6 @@
             android:textAlignment="textStart"
             android:textSize="35sp" />
 
-        <Button
-            android:id="@+id/addRecipe32"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#F4C650"
-            android:text="+"
-            android:textSize="36sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -116,7 +108,7 @@
                 android:background="@drawable/border"
                 android:fontFamily="sans-serif-black"
                 android:padding="20dp"
-                android:text="50%"
+                android:text="66%"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />

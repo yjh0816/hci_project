@@ -11,8 +11,6 @@ import kotlin.collections.ArrayList
 class CookActivity : AppCompatActivity() {
     var data:ArrayList<MyData> = ArrayList()
     lateinit var recyclerView: RecyclerView
-    lateinit var adapter: MyAdapter
-    lateinit var tts:TextToSpeech
     var isTtsReady = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +21,14 @@ class CookActivity : AppCompatActivity() {
         }
         kimchi_percent.setOnClickListener {
             val intent = Intent(this, CookActivity2::class.java)
+            startActivity(intent)
+        }
+        curry_rate.setOnClickListener {
+            val intent = Intent(this, CookActivity3::class.java)
+            startActivity(intent)
+        }
+        curry_percent.setOnClickListener {
+            val intent = Intent(this, CookActivity3::class.java)
             startActivity(intent)
         }
         recipe_add31.setOnClickListener {
